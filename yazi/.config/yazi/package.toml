@@ -1,0 +1,54 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "43c6978"
+hash = "26db011a778f261d730d4f5f8bf24b3f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:mount"
+rev = "43c6978"
+hash = "91937a4a9b779eabc6983e258befdfe9"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "43c6978"
+hash = "f0c8c378184d5f8abd1b095a443d336d"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "43c6978"
+hash = "6fa6a05a81c98dd000fbca3cca6e9682"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "43c6978"
+hash = "384464b6df8cb807425c521f8cd790f3"
+
+[[plugin.deps]]
+use = "AnirudhG07/nbpreview"
+rev = "b504594"
+hash = "b83919985400521dee78e1c352b5d9db"
+
+[[plugin.deps]]
+use = "AnirudhG07/rich-preview"
+rev = "7d616ad"
+hash = "d64feec9761392cbc250d199ab4b8a3a"
+
+[[flavor.deps]]
+use = "BennyOe/tokyo-night"
+rev = "8e6296f"
+hash = "d9da921c3bd37ba32ee27a8a7a40461f"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:catppuccin-latte"
+rev = "9511cb0"
+hash = "b8f46853c27707115f25f3423a47bd38"
+
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "9511cb0"
+hash = "20624fcdfcf7e4e912de05e348065e5e"
+
+[[flavor.deps]]
+use = "AdithyanA2005/nord"
+rev = "bdf0bd4"
+hash = "816970e00d643d3e8213b430d2148aec"

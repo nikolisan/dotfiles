@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=YouTube
+Exec=firefox -P youtube --new-window "https://www.youtube.com"
+Categories=Network;Entertainment

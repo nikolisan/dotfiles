@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Cosmote
+Exec=firefox -P cosmote --new-window "https://www.cosmotetvott.gr/"
+Categories=Network;
