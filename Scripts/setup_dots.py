@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 
-try:
-    with open("version", "r") as f:
-        __VERSION__ = float(f.read().strip())
-except Exception:
-    __VERSION__ = 1.0
-
-
 import subprocess
 import os
 import re
 import shutil
 from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_DIR = SCRIPT_DIR.parent
+
+try:
+    with open(REPO_DIR / "version", "r") as f:
+        __VERSION__ = float(f.read().strip())
+except Exception:
+    __VERSION__ = 1.0
 
 RED = "\033[0;31m"
 GREEN = "\033[0;32m"
@@ -62,10 +64,8 @@ def resolve_conflicts(output: str) -> bool:
     return True
 
 
-cwd = Path(".")
-if cwd.resolve().name != "dots":
-    error(f"Must be run from the 'dots' directory (current: {cwd.resolve()})")
-    exit(1)
+cwd = REPO_DIR
+os.chdir(cwd)
 
 dirs = {(path := Path(d.path)).name: path for d in os.scandir(cwd) if d.is_dir()}
 
@@ -86,7 +86,7 @@ print()
 
 failed = []
 
-not_config_dirs = {}
+not_config_dirs = {"Scripts", ".git"}
 
 for name in dirs.keys() - not_config_dirs:
     print(f"{CYAN}[INFO]{RESET}  Linking {BOLD}{name}{RESET}...", end="\r", flush=True)

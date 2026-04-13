@@ -4,8 +4,11 @@ import subprocess
 import re
 from pathlib import Path
 
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_DIR = SCRIPT_DIR.parent
+
 try:
-    with open("version", "r") as f:
+    with open(REPO_DIR / "version", "r") as f:
         __VERSION__ = float(f.read().strip())
 except Exception:
     __VERSION__ = 1.0

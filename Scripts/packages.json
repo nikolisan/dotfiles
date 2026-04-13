@@ -1,0 +1,48 @@
+{
+  "required": [
+    {
+      "name": "hyprland",
+      "desc": "Tiling wayland compositor"
+    },
+    {
+      "name": "fish",
+      "desc": "User friendly shell"
+    },
+    {
+      "name": "uwsm",
+      "desc": "Wayland session manager for wrapping wayland compositors to a set of systemd units"
+    },
+    {
+      "name": "wlogout",
+      "desc": "Wayland based logout menu"
+    },
+    {
+      "name": "kitty",
+      "desc": "Feature rich, GPU based terminal emulator"
+    },
+    {
+      "name": "dolphin",
+      "desc": "KDE's QT based file manager"
+    },
+    {
+      "name": "rofi",
+      "desc": "Window-switcher, application launcher, and dmenu replacement"
+    },
+    {
+      "name": "awww",
+      "desc": "Wallpaper daemon for Wayland"
+    },
+    {
+      "name": "hypridle",
+      "desc": "Hyprland idle management daemon"
+    },
+    {
+      "name": "neovim",
+      "desc": "Hyperextensible Vim-based text editor"
+    },
+    {
+      "name": "yazi",
+      "desc": "Blazing fast terminal file manager"
+    }
+  ]
+}

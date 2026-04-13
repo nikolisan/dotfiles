@@ -1,15 +1,20 @@
 #!/usr/bin/python3
 
-try:
-    with open("version", "r") as f:
-        __VERSION__ = float(f.read().strip())
-except Exception:
-    __VERSION__ = 1.0
-
 import json
 import shutil
 import subprocess
 import sys
+
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_DIR = SCRIPT_DIR.parent
+
+try:
+    with open(REPO_DIR / "version", "r") as f:
+        __VERSION__ = float(f.read().strip())
+except Exception:
+    __VERSION__ = 1.0
 
 RED = "\033[0;31m"
 GREEN = "\033[0;32m"
@@ -57,18 +62,18 @@ def is_installed(name, pm_name):
 
 def main():
     try:
-        with open("programs.json") as f:
+        with open(SCRIPT_DIR / "packages.json") as f:
             data = json.load(f)
     except FileNotFoundError:
-        error("programs.json not found")
+        error("packages.json not found")
         sys.exit(1)
     except json.JSONDecodeError as e:
-        error(f"Invalid JSON in programs.json: {e}")
+        error(f"Invalid JSON in packages.json: {e}")
         sys.exit(1)
 
     packages = data.get("required", [])
     if not packages:
-        warn("No packages listed in programs.json")
+        warn("No packages listed in packages.json")
         return
 
     pm_name, install_cmd = detect_package_manager()
@@ -130,8 +135,8 @@ def main():
 if __name__ == "__main__":
     print()
     print("┌─────────────────────────────────┐")
-    print(f"│  {BOLD}Systemd services setup {CYAN}{BOLD}v.{__VERSION__:.1f}{RESET}   │")
-    print(f"│      {YELLOW}github.com/nikolisan{RESET}       │")
+    print(f"│       {BOLD}Package setup {CYAN}{BOLD}v.{__VERSION__:.1f}{RESET}       │")
+    print(f"│       {YELLOW}github.com/nikolisan{RESET}      │")
     print("└─────────────────────────────────┘")
     print()
 
