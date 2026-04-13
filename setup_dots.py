@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
-__VERSION__ = 1.0
+try:
+    with open("version", "r") as f:
+        __VERSION__ = float(f.read().strip())
+except Exception:
+    __VERSION__ = 1.0
+
 
 import subprocess
 import os
@@ -81,7 +86,7 @@ print()
 
 failed = []
 
-not_config_dirs = {"services"}
+not_config_dirs = {}
 
 for name in dirs.keys() - not_config_dirs:
     print(f"{CYAN}[INFO]{RESET}  Linking {BOLD}{name}{RESET}...", end="\r", flush=True)
