@@ -4,7 +4,7 @@ Enable theses services within systemd:
 
 | Service | Command |
 | ---------- | ------ |
-| hyprpaper | systemctl --user enable --now hyprpaper.service |
+| awww_daemon | systemctl --user enable --now awww_daemon.service |
 | hypridle | systemctl --user enable --now hypridle.service |
 
 These are required services for the system to function.
