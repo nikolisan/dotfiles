@@ -10,8 +10,8 @@ local function map(mode, keybind, command, opts)
 end
 
 map("i", "jj", "<Esc>")
+map("n", "<leader>fa", ":Telescope file_browser path=%:p:h<cr>", { noremap = false, desc = "Telescope file browser" })
 -- vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
-vim.api.nvim_set_keymap("n", "C-Z", ":u", { desc = "Editor undo", noremap = false })
 
 -- vim.keymap.set("n", "<leader>fs", function()
 --   require("telescope.builtin").grep_string({ search = vim.fn.input("Grep String > ") })
