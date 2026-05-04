@@ -1,0 +1,18 @@
+[config.wallpaper]
+set = true
+command = "awww img --transition-type wave --transition-angle 30 --transition-step 90 --transition-fps 144 {{ image }}"
+post_hook = "echo AAAA"
+
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty-colours.conf"
+output_path = "~/.config/kitty/themes/Matugen.conf"
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+
+[templates.hyprland]
+input_path = "~/.config/matugen/templates/hyprland-colours.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.fish]
+input_path = "~/.config/matugen/templates/fish-colours.fish"
+output_path = "~/.config/fish/themes/colors.fish"

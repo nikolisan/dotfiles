@@ -1,3 +1,4 @@
+source ~/.config/fish/themes/colors.fish
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 source $__fish_config_dir/environment.fish
 
@@ -17,9 +18,10 @@ function y
     rm -f -- "$tmp"
 end
 
-if uwsm check may-start && uwsm select
-    exec uwsm start default
-end
+# Dialog to start hyprland using uwsm
+# if uwsm check may-start && uwsm select
+#     exec uwsm start default
+# end
 
 # Starts direcly the uwsm hyprland.desktop without prompt
 # if uwsm check may-start
